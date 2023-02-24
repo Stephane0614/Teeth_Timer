@@ -1,17 +1,43 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title> Timer </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="zones">
+    <ion-item lines="full" class="ion-margin-vertical"> zone à brosser : {{zone}}/15 </ion-item>
+  </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <div class="timer">
+    <ion-item lines="full" class="ion-margin-vertical"> {{clock}} </ion-item>
+  </div>
+
+  <div class="buttonContainer">
+    <ion-tab-button (click)="pauseTimer()">
+      <ion-icon name="pause-circle-outline"></ion-icon>
+      <ion-label>Pause</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="startTimer()">
+      <ion-icon name="play-circle-outline"></ion-icon>
+      <ion-label>Play</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button (click)="resetTimer()">
+      <ion-icon name="refresh-circle-outline"></ion-icon>
+      <ion-label>Reset</ion-label>
+    </ion-tab-button>
+  </div>
+
+  <div class="UserName">
+    <ion-item lines="full" class="ion-margin-vertical">
+      <p>Timer pour :</p>
+    </ion-item
+    >
+    <ion-item lines="full" class="ion-margin-vertical">
+      <p>{{userName}}</p>
+    </ion-item
+    >
+  </div>
 </ion-content>

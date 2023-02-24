@@ -1,17 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title> Paramètre </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <form [formGroup]="formController" (ngSubmit)="submitForm()">
+    <ion-item lines="full" class="ion-margin-vertical">
+      <ion-label>total Zones :</ion-label>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+      <ion-item>
+        <ion-input type="text" formControlName="totalZones"></ion-input>
+      </ion-item>
+    </ion-item>
+
+    <ion-item lines="full" class="ion-margin-vertical">
+      <ion-label>Quand changer de zone :</ion-label>
+      <ion-item>
+        <ion-input type="text" formControlName="zoneChanges"></ion-input>
+      </ion-item>
+    </ion-item>
+
+    <ion-item lines="full" class="ion-margin-vertical">
+      <ion-label>Pour qui ? :</ion-label>
+      <ion-item>
+        <ion-input type="text" formControlName="userName"></ion-input>
+      </ion-item>
+    </ion-item>
+
+    <ion-button type="submit" color="primary" (click)="savePreferences()">
+      <ion-icon name="save-outline" slot="start"></ion-icon>
+      Sauvegarder vos préférences
+    </ion-button>
+  </form>
 </ion-content>
